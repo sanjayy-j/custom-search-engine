@@ -1,40 +1,104 @@
-# Custom Search Engine with Exa AI
+# NeuraSeek
 
-This project is a simple custom search engine built using the Exa AI API. It allows semantic searching of web content with filters and retrieves relevant results.
+NeuraSeek is a futuristic AI-powered domain search tool that leverages semantic search to find relevant domain-specific content on the public web. Built with Flask, TailwindCSS, and the Exa AI Search API.
 
 ## Features
 
-- Uses Exa AI's semantic search capabilities
-- Search filtered results by domain (e.g., Instagram)
-- Prints titles and URLs from search results
-- Easy to customize queries and filters
+- AI-driven semantic search for precise results
+- Clean, responsive UI with modern Tailwind CSS
+- Configurable number of results and domain filtering
+- Deploys seamlessly on Vercel
 
-## Prerequisites
+## Requirements
 
-- Python 3.10 or higher
-- `exa_py` Python package (install via `pip install exa_py`)
-- Exa AI API key (register at [https://dashboard.exa.ai/login](https://dashboard.exa.ai/login))
+- Python 3.8+
+- Flask
+- exa_py (Exa AI API client)
+- TailwindCSS (via CDN)
 
-## Installation
+## Setup
 
 1. Clone the repository:
-git clone https://github.com/sanjayy-j/custom-search-engine.git
 
-2. Navigate to the project directory:
+git clone https://github.com/your-github-username/custom-search-engine.git
 cd custom-search-engine
 
-3. Install required packages:
-pip install exa_py
 
-## Usage
+2. Create and activate a virtual environment (recommended):
 
-1. Open `main.py` and replace `'YOUR_API_KEY'` with your actual Exa AI API key.
-2. Run the script:
-python main.py
+On Windows:
+python -m venv venv
+.\venv\Scripts\activate
 
-3. Enter your search query when prompted.
-4. View the search results printed to the console.
 
-## License
+On Mac/Linux:
+python3 -m venv venv
+source venv/bin/activate
 
-This project is licensed under the MIT License.
+
+3. Install dependencies:
+
+pip install -r requirements.txt
+
+
+4. Set your Exa API key as an environment variable:
+
+- On Mac/Linux:
+  ```
+  export EXA_API_KEY="your_api_key_here"
+  ```
+
+- On Windows:
+  ```
+  set EXA_API_KEY=your_api_key_here
+  ```
+
+5. Run the Flask app:
+
+python app.py
+
+
+Open http://localhost:5000 in your browser to use the app.
+
+## Deployment on Vercel
+
+1. Ensure your `requirements.txt` and `vercel.json` are in the project root.
+
+2. Push your code to GitHub.
+
+3. Connect your GitHub repo on [Vercel](https://vercel.com/) dashboard.
+
+4. For Build Command, use:
+
+pip install -r requirements.txt
+
+
+5. Leave the Output Directory blank.
+
+6. Vercel will automatically run your Flask app using `vercel.json` configuration.
+
+7. Deploy and get your live app URL.
+
+## Project Structure
+
+├── app.py # Main Flask app
+├── templates/
+│   └── index.html # HTML template
+├── static/ # CSS, JS, images if any
+├── requirements.txt # Python dependencies
+└── vercel.json # Vercel deployment config
+
+## Credits
+
+- [Exa AI Search API](https://exa.ai)
+- [Flask](https://flask.palletsprojects.com/)
+- [TailwindCSS](https://tailwindcss.com/)
+- Deployed on [Vercel](https://vercel.com/)
+
+---
+
+If you have any questions or want to contribute, feel free to open an issue or PR.
+
+---
+
+*Happy Searching!* 🚀
