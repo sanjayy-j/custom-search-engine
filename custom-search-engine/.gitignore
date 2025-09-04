@@ -1,0 +1,46 @@
+# Byte-compiled Python files
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+env/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# IDE and editor files
+.vscode/
+*.code-workspace
+.idea/
+
+# Log files
+*.log
+
+# System files (Windows, macOS)
+*.ini
+*.db
+*.dat
+*.log
+*.swp
+*.swo
+
+# Personal system directories
+.anaconda/
+arduinoIDE/
+OneDrive/
+Videos/
+
+# Ignore secrets or configs with keys (if any)
+*.env
+.env
+
+# Ignore Docker files (if using, else omit)
+docker-compose.yml
+Dockerfile
+
+# Ignore build, dist folders (Python packaging)
+build/
+dist/
+*.egg-info/
