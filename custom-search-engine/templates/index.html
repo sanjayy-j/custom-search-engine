@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Custom Search Engine with Exa AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Custom Search Engine with Exa AI</h1>
+    
+    {% if error %}
+      <p class="error">{{ error }}</p>
+    {% endif %}
+    
+    <form method="POST">
+        <input type="text" name="query" placeholder="Enter your search query" required value="{{ query|default('') }}">
+
+        <label for="num_results">Results:</label>
+        <select name="num_results" id="num_results">
+          <option value="5" {% if num_results == '5'%}selected{% endif %}>5</option>
+          <option value="10" {% if num_results == '10'%}selected{% endif %}>10</option>
+          <option value="15" {% if num_results == '15'%}selected{% endif %}>15</option>
+        </select>
+
+        <label for="domain">Domain:</label>
+        <input type="text" id="domain" name="domain" placeholder="e.g., https://www.instagram.com" value="{{ domain|default('https://www.instagram.com') }}">
+
+        <button type="submit">Search</button>
+    </form>
+
+    <h2>Results:</h2>
+    <ul>
+        {% if results %}
+            {% for result in results %}
+                <li><a href="{{ result.url }}" target="_blank">{{ result.title }}</a></li>
+            {% endfor %}
+        {% else %}
+            <li>No results to display.</li>
+        {% endif %}
+    </ul>
+</body>
+</html>
